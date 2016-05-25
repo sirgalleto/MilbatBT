@@ -21,12 +21,14 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    {
-      "locator": "https://github.com/don/BluetoothSerial",
-      "id": "cordova-plugin-bluetooth-serial"
-    }
+    "cordova-plugin-bluetooth-serial"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    }
   ]
 }
