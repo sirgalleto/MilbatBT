@@ -29,7 +29,8 @@ angular.module('milbatBT', ['ionic', 'ngCordovaBluetoothLE', 'ngUnderscore'])
     .state('list', {
         url: '',
         templateUrl: 'templates/list.tpl.html',
-        controller: 'ListController'
+        controller: 'ListController',
+        cache: false
     });
 
 });
