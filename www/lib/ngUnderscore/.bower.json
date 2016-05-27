@@ -1,0 +1,33 @@
+{
+  "name": "ngUnderscore",
+  "version": "0.1.1",
+  "authors": [
+    "Sebastian Osorio <svzosorio@boolinc.co>"
+  ],
+  "description": "underscore factory for angularjs",
+  "main": "ng-underscore.js",
+  "keywords": [
+    "underscore",
+    "ngUnderscore",
+    "angular"
+  ],
+  "ignore": [
+    "/bower_components"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "angular": "~1.x.x"
+  },
+  "homepage": "https://github.com/svzosorio/ngUnderscore",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "4944faac7f92412fefaed4dfbd58be374f075988"
+  },
+  "_source": "https://github.com/svzosorio/ngUnderscore.git",
+  "_target": "^0.1.1",
+  "_originalSource": "ngUnderscore",
+  "_direct": true
+}

@@ -2,37 +2,43 @@
     'use strict';
 
     angular
-        .module('milbatBT')
-        .controller('ListController', ListController);
+    .module('milbatBT')
+    .controller('ListController', ListController);
 
-    ListController.$inject = ['$scope', '$ionicPlatform'];
+    ListController.$inject = [
+        '$scope', '$ionicPlatform', '$cordovaBluetoothLE', '_'
+    ];
 
     /* @ngInject */
-    function ListController($scope, $ionicPlatform) {
-
-        $scope.getList = getList;
+    function ListController($scope, $ionicPlatform, $cordovaBluetoothLE, _) {
+        $scope.dispositives = [];
 
         $ionicPlatform.ready(function(){
-            getList();
+            $cordovaBluetoothLE.initialize({request:true}).then(null,
+                function(obj) {
+                    alert('Error: ' + obj.message);
+                },
+                function() {
+                    scan();
+                }
+            );
         });
 
-        function getList() {
-            if(window.bluetoothSerial){
-                bluetoothSerial.list(
-                    function(data){
-                        $scope.dispositives = data;
-                        $scope.$apply();
-                        $scope.$broadcast('scroll.refreshComplete');
-                    },
-                    function(error){
-                        $scope.error = error;
-                        $scope.$broadcast('scroll.refreshComplete');
+        function scan() {
+            $cordovaBluetoothLE.startScan({services:[]}).then(null,
+                function(obj) {
+                    alert('Error: ' + obj.message);
+                },
+                function(data) {
+                    console.log(data);
+                    if (data.status == "scanResult") {
+                        if(!_.findWhere($scope.dispositives, {address: data.address})){
+                            $scope.dispositives.push(data);
+                        }
                     }
-                );
-            }
-            else{
-                $scope.$broadcast('scroll.refreshComplete');
-            }
+                    else if (data.status == "scanStarted") {}
+                }
+            );
         }
     }
 })();
