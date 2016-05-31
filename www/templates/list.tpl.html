@@ -1,15 +1,22 @@
 <ion-view view-title="Device list">
     <ion-content>
-    <div class="card" ng-if="dispositives.length <= 0">
-        <div class="item item-text-wrap">
-            No devices available
+        <div class="card" ng-if="dispositives.length <= 0">
+            <div class="item item-text-wrap">
+                No devices available
+            </div>
         </div>
-    </div>
 
-    <ion-list>
-        <ion-item ng-repeat="dispositive in dispositives">
-            {{dispositive.name || 'No name'}}
-        </ion-item>
-    </ion-list>
-</ion-content>
+        <ion-list>
+            <ion-item ng-repeat="dispositive in dispositives">
+                {{dispositive.name || 'No name'}}
+            </ion-item>
+        </ion-list>
+
+        <center>
+            <button class="button button-positive" ui-sref="game">
+                Go to game
+            </button>
+
+        </center>
+    </ion-content>
 </ion-view>

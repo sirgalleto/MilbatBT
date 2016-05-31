@@ -31,6 +31,12 @@ angular.module('milbatBT', ['ionic', 'ngCordovaBluetoothLE', 'ngUnderscore'])
         templateUrl: 'templates/list.tpl.html',
         controller: 'ListController',
         cache: false
+    })
+    .state('game', {
+        url: '/game',
+        templateUrl: 'templates/game.tpl.html',
+        controller: 'GameController',
+        cache: false
     });
 
 });
