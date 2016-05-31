@@ -11,8 +11,7 @@
             restrict: 'EA',
             templateUrl: 'templates/milbatGame.tpl.html',
             scope: {
-                'background': '@', // Color for the background
-                'image': '@', // Url of box image
+                'image': '=', // Url of box image
                 'distance': '@', // Number of pixel by step
                 'vel': '@' // Number into 1 or 10 defined the velocity
             },
